@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Transitions . JS</title>
+<!--CSS:-->
+<!--<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css">-->
+<link href="./css/reset.css" rel="stylesheet" type="text/css" />
+<link href="./css/transitions.css" rel="stylesheet" type="text/css" />
+<link href="./css/homepage.css" rel="stylesheet" type="text/css" />
+<!--JavaScript Libs:-->
+<script type="text/javascript" src="./js/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="./js/bower_components/jquery.stellar/jquery.stellar.js"></script>
+<script type="text/javascript" src="./js/bower_components/jquery.easing/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="./js/transitions/transitions.js"></script>
+<script type="text/javascript">
+function startScroll(){
+	$(document).ready
+	(
+		function() 
+		{
+			
+			//example of extending the easing library
+			$.easing.linearTween = function (x, t, b, c, d) {
+				return c*t/d + b;
+			};
+			
+			//set up custom transitions
+			var transitions = new Transitions();
+			//set custom default easing functions
+			transitions.setEaseIn('easeInOutQuint');
+			transitions.setEaseOut('easeInOutQuint');
+			//create custom transition for the first screen
+			topCustomInOutTransition = function (currentTime, beginningValue, changeInValue, durationTime, direction, sliderSelector) {
+				var sliderHeight = $(sliderSelector).outerHeight();
+				var centerPoint = ($(window).height()-sliderHeight) / 2;
+				changeInValue = centerPoint+sliderHeight+5;
+				beginningValue = centerPoint+sliderHeight;
+				var y = $.easing.easeInOutQuint(1, ((currentTime/2)-150)+((durationTime/2)-150), beginningValue, changeInValue, durationTime);
+				//define transform
+				$(sliderSelector).css('top',y);
+			}
+			//define first element you want to slide and use a custom transition
+			transitions.addSlider('#skills','#section-skills', null, null, topCustomInOutTransition);
+			//define a second element you want to scroll using ease in and out equations from $.easing library
+			transitions.addSlider('#quote1','#section-quote1', 'linearTween', 'easeInOutQuint');
+			//define the other elements you want to scroll but use the ease equations defined in transitions.setEaseIn and transitions.setEaseOut
+			transitions.addSlider('#brand-strip','#section-brand-strip');
+			transitions.addSlider('#career-highlights','#section-career-highlights');
+			transitions.addSlider('#quote2','#section-quote2');
+			//create custom transition for the last screen
+			bottomCustomInOutTransition = function (currentTime, beginningValue, changeInValue, durationTime, direction, sliderSelector) {
+				var sliderHeight = $(sliderSelector).outerHeight();
+				var centerPoint = ($(window).height()-sliderHeight) / 2;
+				changeInValue = centerPoint+sliderHeight;
+				var y = $.easing.easeInOutQuint(1, currentTime, beginningValue, changeInValue, durationTime/2);
+				//define transform
+				$(sliderSelector).css('top',y);
+			}
+			//define last element you want to slide and use a custom transition
+			transitions.addSlider('#overview','#section-overview', null, null, bottomCustomInOutTransition);
+			//init scroller
+			transitions.doScroll();
+			//init scroll listener
+			$(window).on
+			(
+				"scroll",
+				transitions.doScroll
+			);
+			
+			
+		}
+	);
+}
+</script>
+</head>
+<!--startScroll() is what triggers the javascript above-->
+	<body onload="startScroll()" >
+		<!--section elements used to control the scrolling of the slider elements below-->
+        <div id="section-skills" class="sections">1</div>
+        <div id="section-quote1" class="sections">2</div>
+        <div id="section-brand-strip" class="sections">3</div>
+        <div id="section-career-highlights" class="sections">4</div>
+        <div id="section-quote2" class="sections">5</div>
+        <div id="section-overview" class="sections">6</div>
+		<!--slider elements that will be transitioned using equations as slider elements scroll by the normal view port-->
+        <div id="skills">skills</div>
+        <div id="quote1">quote</div>
+        <div id="brand-strip">brand strip</div>
+        <div id="career-highlights">career highlights</div>
+        <div id="quote2">quote2</div>
+        <div id="overview">overview</div>
+	</body>
+</html>

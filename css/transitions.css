@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*applied to all elements that are being eased in and out as you scroll*/
+.sliders{
+	visibility:hidden;
+	position:relative;
+	width:100%;
+	display:block;
+}
+/*containers that hold the sliders*/
+.wrapper{
+	display:block;
+	width:100%;
+	position:fixed;
+	top:0;
+}

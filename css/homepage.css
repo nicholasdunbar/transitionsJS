@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*
+Each section tells transitions.js when to start the easing/transition and when to end it.
+We use dashed boxes here so you can see where they start and end.
+The height will determine how long the scroll will be.
+The margin-top when negative allows there to be multiple sections on the screen at one time
+acting as control points for each slider
+*/
+.sections{
+	width:100%;
+	border-style:dashed;
+	border-width:medium;
+	border-color:#3F0;
+	display:block;
+	height:2000px;
+	margin-top:-1070px;
+}
+/*
+custom css for the top section because it is using a different transition function
+*/
+#section-skills{
+	top:0px;
+	margin-top:0px;
+	height:1000px;
+}
+/*
+custom css for the second section because the top is using a different transition function
+*/
+#section-quote1{
+	margin-top:-1000px;
+}
+/*
+custom css for the bottom section because it is using a different transition function
+*/
+#section-overview{
+	height:2300px;
+}
+
+/*
+styles for each section that you are sliding
+*/
+#skills{
+	height:200px;
+	background-color:#60F;
+	color:#FFF;
+	position:relative;
+}
+#quote1{
+	height:200px;
+	background-color:#60F;
+	color:#FFF;
+	position:relative;
+}
+#brand-strip{
+	height:200px;
+	background-color:#60F;
+	color:#FFF;
+	position:relative;
+}
+#career-highlights{
+	height:200px;
+	background-color:#60F;
+	color:#FFF;
+	position:relative;
+}
+#quote2{
+	height:200px;
+	background-color:#60F;
+	color:#FFF;
+	position:relative;
+}
+#overview{
+	height:200px;
+	background-color:#60F;
+	color:#FFF;
+	position:relative;
+}
