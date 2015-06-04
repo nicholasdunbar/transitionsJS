@@ -2,6 +2,7 @@
 JavaScript Library for controlling sliding elements on and off screen as the user scrolls down the page.
 
 See a pretty demo here: www.designcortex.com
+
 See a bare bones demo here: https://jsfiddle.net/nicholasdunbar/mvdjcm1j/4/
 
     //set up custom transitions
