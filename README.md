@@ -1,9 +1,15 @@
 # transitionsJS
 JavaScript Library for controlling sliding elements on and off screen as the user scrolls down the page.
 
-See a pretty demo here: www.designcortex.com
+Examples:
 
-See a bare bones demo here: https://jsfiddle.net/nicholasdunbar/mvdjcm1j/4/
+Pretty demo (what's possible): www.designcortex.com
+
+Bare bones demo: https://jsfiddle.net/nicholasdunbar/ps2yypmp/2/
+
+Custom transition/easing function: https://jsfiddle.net/nicholasdunbar/hzz9Ln19/
+
+Custom transition/easing function for one specific transition: 
 
     //set up custom transitions
     var transitions = new Transitions();
