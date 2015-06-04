@@ -1,5 +1,6 @@
 # transitionsJS
-JavaScript Library for controlling sliding elements on and off screen as the user scrolls down the page.
+JavaScript Library for controlling sliding elements on and off screen as the 
+user scrolls up and down the page.
 
 EXAMPLES:
 
@@ -9,7 +10,7 @@ https://jsfiddle.net/nicholasdunbar/ps2yypmp/2/
 Custom transition/easing function: 
 https://jsfiddle.net/nicholasdunbar/hzz9Ln19/
 
-Custom transition/easing function for one specific transition: 
+Custom transition/easing function for specific panels: 
 https://jsfiddle.net/nicholasdunbar/7k217dt2/
 
 Pretty demo (what's possible): 
@@ -41,3 +42,8 @@ Here is a basic example of how the javascript looks:
 
 This is to give you an idea of how the basic code looks. 
 Check out the JSFiddle examples above for an example of a full set up.
+
+Some people call these "parallax" scrollers but in the truest sense of the word
+paralax is a very specific visual effect. I only mention it here so that there
+are more keywords in this description to help you find what your looking for
+from google.
