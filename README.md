@@ -1,6 +1,7 @@
 # transitionsJS
-JavaScript Library for controlling sliding elements on and off screen as the 
-user scrolls up and down the page.
+JavaScript Library for controlling sliding elements on and off 
+
+the screen as the user scrolls up and down the page.
 
 EXAMPLES:
 
