@@ -6,7 +6,7 @@ the screen as the user scrolls up and down the page.
 EXAMPLES:
 
 Bare bones demo: 
-https://jsfiddle.net/nicholasdunbar/ps2yypmp/2/
+https://jsfiddle.net/nicholasdunbar/ps2yypmp/12/
 
 Custom transition/easing function: 
 https://jsfiddle.net/nicholasdunbar/hzz9Ln19/
